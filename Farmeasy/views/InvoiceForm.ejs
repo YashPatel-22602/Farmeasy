@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Js-To-PDF</title>
+    <link rel="stylesheet" href="./css/RentalForm.css">
+	<style>
+
+		/* body {
+			padding: 40px;
+		}
+
+		button {
+			padding: 12px 50px;
+			border: none;
+			background-color: rgb(91,234,208);
+			color: #333;
+			cursor: pointer;
+			display: inline-block;
+		}
+
+		input {
+			padding: 12px 20px;
+		} */
+
+	</style>
+</head>
+<body>
+
+
+	<!-- <input type="text" placeholder="name your price" />
+
+	<hr />
+
+	<button>receipt</button> -->
+    <div class="container">
+        <div class="title">Apply for Rental Service</div>
+        <div class="content">
+          <form>
+            <div class="user-details">
+              <div class="input-box LON">
+                <span class="details">Land Owner's Name</span>
+                <input type="text" name="landOwnerName" id="landOwnerName" placeholder="Land Owner's name" required>
+              </div>
+              <div class="input-box LOS">
+                <span class="details">Land Owner's Surname</span>
+                <input type="text" name="landOwnerSurname" id="landOwnerSurname" placeholder="Land Owner's last Name" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="text" name="Email" id="Email" placeholder="Enter your email" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Contact Phone Number</span>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Enter your number" required>
+              </div>
+              <!-- <div class="input-box">
+                <span class="details">Alternate Phone Number</span>
+                <input type="text" name="altPhoneNumber" id="altPhoneNumber" placeholder="Enter Alternate Phonenumber" required>
+              </div> -->
+              <div class="input-box">
+                <span class="details">Date for Booking</span>
+                <input type="date" name="dateOfBooking" id="dateOfBooking"  required>
+              </div>
+              <div class="input-box">
+                <span class="details">Flat no.</span>
+                <input type="text" name="Add_flatno" id="Add_flatno" placeholder="eg. A/702" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Street Name</span>
+                <input type="text"  name="Add_StreetName" id="Add_StreetName" placeholder="eg. Avenue Street"  required>
+              </div>
+              <div class="input-box">
+                <span class="details">Landmark</span>
+                <input type="text" name="Add_Landmark" id="Add_Landmark" placeholder="eg. HDFC bank" required>
+              </div>
+              <div class="input-box">
+                <span class="details">City</span>
+                <input type="text" name="Add_City" id="Add_City" placeholder="eg. Mumbai" required>
+              </div>
+              <div class="input-box">
+                <span class="details">State</span>
+                <input type="text" name="Add_State" id="Add_State" placeholder="eg. Maharashtra" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Pin Code</span>
+                <input type="text" name="Add_Pincode" id="Add_Pincode" placeholder="eg. 401009" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Area of your Land</span>
+                <input type="number" name="LandArea" id="LandArea" placeholder="In acres" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Your preference of Crop</span>
+                <input type="text" name="CropPref1" id="CropPref1" placeholder="preference no. 1" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Your preference of Crop</span>
+                <input type="text" name="CropPref2" id="CropPref2" placeholder="preference no. 2" required>
+              </div>
+            </div>
+            <button style="height: 100%;width: 100%;border-radius: 5px;border: none;color: #fff;font-size: 18px;font-weight: 500;letter-spacing: 1px;padding: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6); ">Apply</button>
+            
+          </form>
+        </div>
+      </div>
+	<script 
+		src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js" 
+	  integrity="sha256-vIL0pZJsOKSz76KKVCyLxzkOT00vXs+Qz4fYRVMoDhw="
+	  crossorigin="anonymous">
+	</script>
+
+	<script>
+
+		// init the jsPDF library
+		const pdf = new jsPDF();
+
+		// select the button
+		let button = document.querySelector('button');
+		// select the input
+		const LON = document.querySelector("div.input-box.LON input[name='landOwnerName']");
+		const LOS = document.querySelector("div.input-box.LOS input[name='landOwnerSurname']");
+		const EML = document.querySelector("div.input-box input[name='Email']");
+		const PN = document.querySelector("div.input-box input[name='phoneNumber']");
+		// const APN = document.querySelector("div.input-box input[name='altPhoneNumber']");
+		const DOB = document.querySelector("div.input-box input[name='dateOfBooking']");
+		const FN = document.querySelector("div.input-box input[name='Add_flatno']");
+		const SN = document.querySelector("div.input-box input[name='Add_StreetName']");
+		const LM = document.querySelector("div.input-box input[name='Add_Landmark']");
+		const CITY = document.querySelector("div.input-box input[name='Add_City']");
+		const STATE = document.querySelector("div.input-box input[name='Add_State']");
+		const PIN = document.querySelector("div.input-box input[name='Add_Pincode']");
+		const AOL = document.querySelector("div.input-box input[name='LandArea']");
+		const CP_1 = document.querySelector("div.input-box input[name='CropPref1']");
+		const CP_2 = document.querySelector("div.input-box input[name='CropPref2']");
+    const Basic_Cost = 10000 
+    const ID_1 = Math.floor((Math.random() * 100) + 1);
+    const ID_2 = Math.floor((Math.random() * 100) + 1);
+    // const tax_calculated_cost = Basic_Cost * (18/100); 
+		// add 'click' event listener for the button
+		button.addEventListener('click', printPDF)
+
+		// actual PDF options
+		function printPDF() {
+      pdf.setFont('Lato-Regular', 'normal');
+      var imgdata = "data:image/jpeg;base64,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"
+// @param 1 - Coordinate (in units declared at inception of PDF document) against left edge of the page
+// @param 2 - Coordinate (in units declared at inception of PDF document) against upper edge of the page
+// @param 3 - String or array of strings to be added to the page. Each line is shifted one line down per font, spacing settings declared before this call.
+
+      // pdf.text(10,10,`Land Owner's Name : ${LON.value}`);
+      pdf.text(10,20,`Owner Name : ${LON.value}`);
+      pdf.text(10,30,`Owner Surname : ${LOS.value}`);
+      pdf.text(10,40,`Contact Info. : ${PN.value}`);
+      pdf.text(10,50,`Email : ${EML.value}`);
+      pdf.text(10,10,`Invoice ID:FE_${ID_1}_${ID_2}`)
+
+      pdf.addImage(imgdata,'JPEG',120,20,85,25)
+
+      pdf.text(130,70,`Farmeasy:Land Rental Services`) //r
+      pdf.text(130,80,`Contact: +91-8806825822`) //r
+      pdf.text(130,90,`Email: Farmeasy@gmail.com`) //r
+      pdf.line(10,60,200,60);
+      pdf.text(10,70,`Customer's Address:`);
+      pdf.text(10,80,`Flat No. :${FN.value}`);
+      pdf.text(10,90,`Street Name :${SN.value}`);
+      pdf.text(10,100,`Landmark:${LM.value}`);
+      pdf.text(10,110,`City,State :${CITY.value} , ${STATE.value}`);
+      pdf.setLineWidth(1)
+      pdf.line(10,120,200,120); //top main box
+      pdf.setLineWidth(0.5)
+      pdf.line(10,130,200,130); //2nd line main box
+      pdf.setLineWidth(0.5)
+      pdf.line(10,180,200,180); //2nd last line main box
+      pdf.setLineWidth(1)
+      pdf.line(10,190,200,190); //bottom main box
+
+      pdf.setLineWidth(1)
+      pdf.line(10,120,10,190); //left main box 
+      pdf.setLineWidth(1)
+      pdf.line(200,120,200,190); //right main box
+      pdf.setLineWidth(0.5)
+      pdf.line(27,120,27,190); //2nd line (from left) main box 
+      pdf.line(160,120,160,190); //3rd line (from left) main box 
+
+      //Table Content Start
+
+      pdf.text(12,127,`Sr.No`);
+      pdf.text(85,127,`Service`);
+      pdf.text(174,127,`Price`);
+
+      pdf.text(14,137,`1.`)
+      pdf.text(30,137,`Farmeasy Land Rental Service Visiting Charges`);
+      pdf.text(30,147,`Owner's Land Area - ${AOL.value} acres`);
+      pdf.text(30,157,`Date of Visit - ${DOB.value}`);
+      pdf.text(30,167,`Owner's 1st Crop Preference - ${CP_1.value}`);
+      pdf.text(30,177,`Owner's 2nd Crop Preference - ${CP_2.value}`);
+      pdf.text(162,137,`Rs.${Basic_Cost}`)
+      pdf.text(145,187,`Total`)
+      pdf.text(162,187,`Rs.${Basic_Cost}`)
+      //Table Content End
+      //Below Table 
+      pdf.text(10,200,`Note. Farmeasy Experts Will visit You On-site on Provided booking Date.`)
+      pdf.text(10,210,`Payment Link - https://buy.stripe.com/test_fZeg0r9WugJvaPufZ8`)
+      pdf.text(125,230,`Thank You for Using Farmeasy`)
+			// save the PDF document (downloadable)
+			pdf.output('save',`Farmeasy_${LON.value}_${LOS.value}_LandApplicationInvoice`);
+
+		}
+
+	</script>
+
+</body>
+</html>
+

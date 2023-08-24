@@ -1,0 +1,94 @@
+<!-- my registration page -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/loginRegisterCSS.css">
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$( "#form1" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/',
+					data: $('#form1').serialize(),
+					dataType: "json",
+					success: function(response){
+						//alert("a");
+						//console.log(response.Success);
+						$('#form1')[0].reset();
+
+						document.getElementById("check").innerHTML=response.Success;
+         					//ADD THIS CODE
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="You are regestered,You can login now.") {
+         						document.getElementById("aa").click();
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+		});
+	</script>
+</head>
+<body>
+
+	<div class="split-screen">
+        <div class="left">
+            <section class="copy">
+                <br><br>
+                <h1 style="margin-top: 10px;">WELCOME TO FARMEASY</h1>
+                <p>Farmeasy, an Online Support Rental and Advisory Website provides Multiple services to improve the standard of living for farmers, quality of crops in the market. Farmeasy works hardly to live upto the country’s Agricultural Nation Achievement.</p>
+            </section>
+        </div>
+        <div class="right">
+            <form id="form1" action=""  method="post">
+                <section class="copy">
+                    <h2>REGISTER</h2>
+                    
+                </section >  
+                        <label for="fname"><b> First Name: </b></label>
+                        <br>
+                        <input type="text" name="fname"  id="fname" placeholder="Enter Your First Name">
+                        <br><br>
+                        <label for="lname"><b> Last Name: </b> </label>
+                        <br>
+                        <input type="text" name="lname"  id="lname" placeholder="Enter Your Last Name">
+						<br><br>
+						<label for="email"><b> Email id: </b></label>              
+                        <br>
+                        <input type="email" name="email"  id="email" placeholder="Enter Your Email-id">
+						<br><br>
+                        <label for="pwd"><b>Password:</b></label>
+                        <br>
+                        <input type="password" name="password"  id="password"  placeholder="Enter Password">
+                        <br><br>
+                        <label for="confirmpass"><b> Confirm password: </b></label>   
+                        <br>
+                        <input type="password" name="confirmpass"  id="state" placeholder="Confirm Password">
+                        <br><br>
+                        <label for="mobileno"><b> Mobile No: </b></label>   
+                        <br>
+                        <input type="number" name="mobileno"  id="mobileno" placeholder="Enter Your Mobile-no">
+                        <br><br>
+                <div class="card-footer">
+                    <button  type="submit">REGISTER</button>
+                    </div>  
+                <div>
+                    <span>Already Registered! <a href="/login">Login</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

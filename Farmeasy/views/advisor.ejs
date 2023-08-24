@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advisory Page</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="../routes/script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+*{
+   font-family: 'Nunito', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition: all .2s linear;
+   text-transform: capitalize;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+body{
+   background: #eee;
+}
+
+.container{
+   max-width: 1200px;
+   margin:0 auto;
+   padding:3rem 2rem;
+}
+
+.container .title{
+   font-size: 3.5rem;
+   color:#444;
+   margin-bottom: 3rem;
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.container .products-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:2rem;
+}
+
+.container .products-container .product{
+   text-align: center;
+   padding:3rem 2rem;
+   background: #fff;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   outline: .1rem solid #ccc;
+   outline-offset: -1.5rem;
+   cursor: pointer;
+}
+
+.container .products-container .product:hover{
+   outline: .2rem solid #27ae60;
+   outline-offset: 0;
+}
+
+.container .products-container .product img{
+   height: 25rem;
+}
+
+.container .products-container .product:hover img{
+   transform: scale(.9);
+}
+
+.container .products-container .product h3{
+   padding:.5rem 0;
+   font-size: 2rem;
+   color:#444;
+}
+
+.container .products-container .product:hover h3{
+   color:#27ae60;
+}
+
+.container .products-container .product .price{
+   font-size: 2rem;
+   color:#444;
+}
+
+.products-preview{
+   
+   z-index: 100;
+   position: fixed;
+   top:0; left:0;
+   width: 100%;
+   background: rgba(0,0,0,.8);
+   display: none;
+   align-items: center;
+   justify-content: center;
+}
+
+.products-preview .preview{
+   font-size: 25px;
+   display: none;
+   height: 750px;
+   overflow-y: scroll;
+   padding:2rem;
+   text-align: center;
+   background: #fff;
+   position: relative;
+   margin:10rem;
+   width: 100rem;
+}
+
+.products-preview .preview.active{
+   display: inline-block;
+}
+
+.products-preview .preview img{
+   height: 25rem;
+}
+
+.products-preview .preview .fa-times{
+    padding: 20px;
+   position: absolute;
+   top:1rem; right:1.5rem;
+   cursor: pointer;
+   color:#444;
+   font-size: 4rem;
+}
+
+
+
+.products-preview .preview h3{
+   color:#444;
+   padding:.5rem 0;
+   font-size: 2.5rem;
+}
+
+.products-preview .preview .stars{
+   padding:1rem 0;
+   font-size: 1.7rem;
+}
+
+.products-preview .preview .stars i{
+   color:#27ae60;
+}
+
+.products-preview .preview .stars span{
+   color:#999;
+}
+
+.products-preview .preview p{
+   line-height: 1.5;
+   padding:1rem 0;
+   font-size: 2.5rem;
+   color:#777;
+}
+
+.products-preview .preview .price{
+   padding:1rem 0;
+   font-size: 2.5rem;
+   color:#27ae60;
+}
+
+.products-preview .preview .buttons{
+   display: flex;
+   gap:1.5rem;
+   flex-wrap: wrap;
+   margin-top: 1rem;
+}
+
+.products-preview .preview .buttons a{
+   flex:1 1 16rem;
+   padding:1rem;
+   font-size: 1.8rem;
+   color:#444;
+   border:.1rem solid #444;
+}
+
+.products-preview .preview .buttons a.cart{
+   background: #444;
+   color:#fff;
+}
+
+.products-preview .preview .buttons a.cart:hover{
+   background: #111;
+}
+
+.products-preview .preview .buttons a.buy:hover{
+   background: #444;
+   color:#fff;
+}
+
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px){
+
+   .products-preview .preview img{
+      height: 25rem;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+}
+  </style>
+</head>
+
+<body>
+  <!-- header section starts  -->
+
+  <header id="header" >
+	
+		<a href="/profile" class="logo"><span style="color: rgb(164, 235, 118);">farm</span>easy</a>
+	
+		<div id="menu-bar" class="fas fa-bars"></div>
+	
+		<nav class="navbar">
+			<a href="/profile#services">Services</a>
+			<a href="/profile#popular">Buy</a>
+			<a href="/rental">Rental Service</a>
+			<a href="/advisor">Advisory</a>
+			<a href="/profile#review">Reviews</a>
+			<a href="/">Register</a>
+			<a href="/login">Login</a>
+		</nav>
+	
+	</header>
+
+<!-- header section ends -->
+
+<!-- popular section starts  -->
+
+<section class="popular" id="popular">
+      <h1>ojojjojoj</h1>
+      <h1>jbdbsjbdjsbd</h1>
+      <h3>bjbdsbjdbsj</h3>
+  <div class="container">
+
+    <h3 class="title"><span style="color: rgb(164, 235, 118); padding-top:100px ;"> Advisory </span>Services</h3>
+ 
+    <div class="products-container">
+ 
+       <div class="product" data-name="p-1">
+          <img src="./images/advisor_1.jpg" alt="">
+          <h3>Kailas More</h3>
+       </div>
+ 
+       <div class="product" data-name="p-2">
+          <img src="./images/advisor_2.jpg" alt="">
+          <h3>Dara Pratap Singh Raghubanshi</h3>
+       </div>
+ 
+       <div class="product" data-name="p-3">
+          <img src="./images/advisor_3.jpg" alt="">
+          <h3>Rameshbhai Gordhanbhai Chovatiya</h3>
+       </div>
+ 
+       <div class="product" data-name="p-4">
+          <img src="./images/advisor_4.jpg" alt="">
+          <h3>Mahendra Lohar</h3>
+       </div>
+ 
+       <div class="product" data-name="p-5">
+          <img src="./images/advisor_5.jpg" alt="">
+          <h3>Hemant verma</h3>
+       </div>
+ 
+       <div class="product" data-name="p-6">
+          <img src="./images/advisor_6.jpg" alt="">
+          <h3>Manojbhai Ganeshbhai Bhesadadiya</h3>
+       </div>
+ 
+    </div>
+ 
+ </div>
+ 
+ <div class="products-preview">
+ 
+    <div class="preview" data-target="p-1">
+       <span class="fas fa-times"></span>
+       <img src="./images/advisor_1.jpg" alt="">
+       <h3>Kailas More</h3>
+       <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>( 250 )</span>
+       </div>
+         <p>Name:-Kailas More</p>
+         <p>Expertise:-Certified Professional Agronomist</p>
+         <p>Education:-Diploma in Agricultural Extension Services for Input Dealers </p>
+         <p>Experience:-15+ Years</p> 
+         <p>Mobile Number:-8763546346</p>
+         <p>Email:-kailasmore@gmail.com</p>
+         <a href="mailto:kailasmore@gmail.com &subject= To Contact About Farming Advice:Farmeasy&body=Hello, Advisor kailas!
+
+         I'm a Farmeasy Subscriber. I am contacting You for asking advices and Clearing doubts about my Farm and help me gain knowledge.I am grateful be in your help and would be Honoured to be in contact further on. 
+         
+         Thank you for your help!." class="btn">Contact</a>
+    </div>
+ 
+    <div class="preview" data-target="p-2">
+       <i class="fas fa-times "></i>
+       <img src="./images/advisor_2.jpg" alt="">
+       <h3>Dara Pratap Singh Raghubanshi</h3>
+       <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>( 250 )</span>
+       </div>
+         <p>Name:-Dara Pratap Singh Raghubanshi</p>
+         <p>Expertise:-Certified Soil Technician</p>
+         <p>Education:-Post Graduate Diploma in Management (Agri Business Management)</p>
+         <p>Experience:-15+ Years</p> 
+         <p>Mobile Number:-9365672212</p>
+         <p>Email:-DPsingh12@gmail.com</p>
+         <a href="mailto:DPsingh12@gmail.com &subject= To Contact About Farming Advice:Farmeasy&body=Hello, Advisor DP Singh!
+
+         I'm a Farmeasy Subscriber. I am contacting You for asking advices and Clearing doubts about my Farm and help me gain knowledge.I am grateful be in your help and would be Honoured to be in contact further on. 
+         
+         Thank you for your help!." class="btn">Contact</a>     
+    </div>
+ 
+    <div class="preview" data-target="p-3">
+       <i class="fas fa-times"></i>
+       <img src="./images/advisor_3.jpg" alt="">
+       <h3>Rameshbhai Gordhanbhai Chovatiya</h3>
+       <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>( 250 )</span>
+       </div>
+         <p>Name:-Rameshbhai Gordhanbhai Chovatiya</p>
+         <p>Expertise:-Certified Crop Adviser</p>
+         <p>Education:-Agriculture Engineering</p>
+         <p>Experience:-15+ Years</p> 
+         <p>Mobile Number:-765473891</p>
+         <p>Email:-RameshGotdhan34@gmail.com</p>
+         <a href="mailto:RameshGotdhan34@gmail.com &subject= To Contact About Farming Advice:Farmeasy&body=Hello, Advisor Ramesh!
+
+         I'm a Farmeasy Subscriber. I am contacting You for asking advices and Clearing doubts about my Farm and help me gain knowledge.I am grateful be in your help and would be Honoured to be in contact further on. 
+         
+         Thank you for your help!." class="btn">Contact</a>     
+    </div>
+ 
+    <div class="preview" data-target="p-4">
+       <i class="fas fa-times"></i>
+       <img src="./images/advisor_4.jpg" alt="">
+       <h3>Mahendra Lohar</h3>
+       <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>( 250 )</span>
+       </div>
+         <p>Name:-Mahendra Lohar</p>
+         <p>Expertise:-Sustainability Specialist</p>
+         <p>Education:-Post Graduate Diploma in Management (Agri Business Management)</p>
+         <p>Experience:-15+ Years</p> 
+         <p>Mobile Number:-998027891</p>
+         <p>Email:-MahendraLohar32@gmail.com</p>
+         <a href="mailto:MahendraLohar32@gmail.com &subject= To Contact About Farming Advice:Farmeasy&body=Hello, Advisor Mahendra!
+
+         I'm a Farmeasy Subscriber. I am contacting You for asking advices and Clearing doubts about my Farm and help me gain knowledge.I am grateful be in your help and would be Honoured to be in contact further on. 
+         
+         Thank you for your help!." class="btn">Contact</a>  
+    </div>
+ 
+    <div class="preview" data-target="p-5">
+       <i class="fas fa-times"></i>
+       <img src="./images/advisor_5.jpg" alt="">
+       <h3>Hemant verma</h3>
+       <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>( 250 )</span>
+       </div>
+         <p>Name:-Hemant verma</p>
+         <p>Expertise:- Nutrient Management</p>
+         <p>Education:-Diploma in Agricultural Extension Services for Input Dealers </p>
+         <p>Experience:-15+ Years</p> 
+         <p>Mobile Number:-763456789</p>
+         <p>Email:-Hemantverma@gmail.com</p>
+         <a href="mailto:Hemantverma@gmail.com &subject= To Contact About Farming Advice:Farmeasy
+         &body=Hello, Advisor Hemant!
+
+         I'm a Farmeasy Subscriber. I am contacting You for asking advices and Clearing doubts about my Farm and help me gain knowledge.I am grateful be in your help and would be Honoured to be in contact further on. 
+         
+         Thank you for your help!." class="btn">Contact</a>   
+    </div>
+ 
+    <div class="preview" data-target="p-6">
+       <i class="fas fa-times"></i>
+       <img src="./images/advisor_6.jpg" alt="">
+       <h3>Manojbhai Ganeshbhai Bhesadadiya</h3>
+       <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>(250)</span>
+       </div>
+       <p>Name:-Manojbhai Ganeshbhai Bhesadadiya</p>
+      <p>Expertise:-Integrated Pest Management</p>
+      <p>Education:-Agriculture Engineering</p>
+      <p>Experience:-15+ Years</p> 
+      <p>Mobile Number:-998671891</p>
+      <p>Email:-MGBhesadadiya@gmail.com</p>
+      <a href="mailto:MGBhesadadiya@gmail.com &subject= To Contact About Farming Advice:Farmeasy&body=Hello, Advisor Manojbhai!
+
+         I'm a Farmeasy Subscriber. I am contacting You for asking advices and Clearing doubts about my Farm and help me gain knowledge.I am grateful be in your help and would be Honoured to be in contact further on. 
+         
+         Thank you for your help!." class="btn">Contact</a>     
+    </div>
+ 
+ </div>
+</div>
+</section>
+<!-- popular section ends -->
+
+<!-- footer section  -->
+
+<section class="footer">
+	
+   <div class="share">
+      <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjck_vw4pH7AhVDzzgGHYW4DyQQFnoECAsQAQ&url=https%3A%2F%2Fwww.facebook.com%2F&usg=AOvVaw2q27ov2cpCynr72DmuSqEz" class="btn">facebook</a>
+      <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiFgbed45H7AhUn8zgGHeJVCMEQFnoECBMQAQ&url=https%3A%2F%2Ftwitter.com%2Flogin&usg=AOvVaw3swNPrVfKaBGiX8TGfSpkN" class="btn">twitter</a>
+      <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjamtCR45H7AhWd8DgGHWnTCGwQFnoECA4QAQ&url=https%3A%2F%2Fwww.instagram.com%2F&usg=AOvVaw1cBeRoOpMhZ3-x5M1sA3Fm" class="btn">instagram</a>
+      <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiZoP6n45H7AhUX7zgGHSZhA_8QFnoECAYQAQ&url=https%3A%2F%2Fin.pinterest.com%2F&usg=AOvVaw27xxbiSXBci9lSBkMFEcWA" class="btn">pinterest</a>
+      <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjSzOev45H7AhWI8DgGHWhpCpMQFnoECAsQAQ&url=https%3A%2F%2Fwww.linkedin.com%2Flogin&usg=AOvVaw0Nm71ZUGxfI8ojRjO8H1X_" class="btn">linkedin</a>
+   </div>
+   <h1 class="credit"> created by <span> GROUP MAYS </span> | all rights reserved! </h1>  
+</section>
+
+<!-- loader 
+<div class="loader-container">
+  <img src="images/loader.gif" alt="">
+</div> -->
+<script>
+    let preveiwContainer = document.querySelector('.products-preview');
+let previewBox = preveiwContainer.querySelectorAll('.preview');
+
+document.querySelectorAll('.products-container .product').forEach(product =>{
+  product.onclick = () =>{
+    preveiwContainer.style.display = 'flex';
+    let name = product.getAttribute('data-name');
+    previewBox.forEach(preview =>{
+      let target = preview.getAttribute('data-target');
+      if(name == target){
+        preview.classList.add('active');
+      }
+    });
+  };
+});
+
+previewBox.forEach(close =>{
+  close.querySelector('.fa-times').onclick = () =>{
+    close.classList.remove('active');
+    preveiwContainer.style.display = 'none';
+  };
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/loginRegisterCSS.css">
+	<link rel="stylesheet" href="../routes/script.js">
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$( "#form" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/login',
+					data: $('#form').serialize(),
+					dataType: "json",
+					success: function(response){
+						//alert("a");
+						//console.log(response.Success);
+						$('#form')[0].reset();
+
+						document.getElementById("check").innerHTML=response.Success;
+         					//ADD THIS CODE
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="Success!") {
+         						document.getElementById("aa").click();
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+
+		});
+		
+	</script>
+</head>
+<body>
+
+	<div class="split-screen">
+        <div class="left">
+            
+            <section class="copy">
+                <br><br>
+                <h1>WELCOME TO FARMEASY</h1>
+                <p>Farmeasy, an Online Support Rental and Advisory Website provides Multiple services to improve the standard of living for farmers, quality of crops in the market. Farmeasy works hardly to live upto the country’s Agricultural Nation Achievement.</p>    
+            
+			</section>
+        </div>
+        <div class="right">
+            <form id="form" action=""  method="post">
+                <section class="copy">
+                    <h2>SIGN IN</h2>
+                    
+                </section >
+                <label for="fname"><b>USERNAME: </b></label>
+                <br>
+                <input type="text" name="email"  id="name" placeholder="Enter Email">
+                    <br><br>
+
+                <label for="pwd"><b>Password:</b></label>
+                <br>
+                <input type="password"name="password"  id="name"  placeholder="Enter Password">
+                    <br><br>
+                <br>
+
+                <div class="card-footer" onclick="showLogout()">
+					<input type="submit" value="Login" class="btn btn-success">
+                </div>
+                
+
+                <section class="copy legal">
+
+
+                    <p><span>Forgot Password? 
+                        <a href="/forgetpass">Click Here</a><br>
+                        New to Farmeasy?
+						<a href="/">Register Now</a>
+                    </span></p>
+                </section>
+            </form>
+			<div class="mssg bg-danger">
+			<span id="check" ></span>
+			</div>
+			<div id="LangTable"><a href="/profile" id="aa"></a>
+			</div>
+        </div>
+    </div>
+</body>
+</html>

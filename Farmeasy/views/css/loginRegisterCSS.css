@@ -1,0 +1,125 @@
+:root{
+    font-size: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    --primary-blue: rgb(164, 235, 118);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.split-screen {
+    display: flex;
+    flex-direction: column;
+}
+
+.left {
+    height: 200px;
+}
+
+.left, .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(204, 242, 179) ;
+ }
+
+.left {
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)), url(../images/re.jpg);
+    background-size: cover;
+}
+
+.left .copy {
+    color: white;
+    text-align: center;
+    --webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.left p {
+    font-weight: 400;
+}
+
+.right .copy {
+    color: black;
+    text-align: center;
+}
+
+.right .copy p {
+    margin: 1.5em 0;
+    font-size: 0.875rem;
+}
+
+.right form {
+    width: 328px;
+}
+
+form#register{
+    margin: 40px;
+}
+
+
+input ,#fname, #lname, #email,#password,#state,#mobileno{
+    width: 300px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: 0;
+    padding: 7px;
+    background-color: #fff;
+  
+}
+
+
+
+.card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-footer button{
+    width: 150px;
+    background: black;
+    color: white;
+    border-radius: 15px;
+    border: 2px solid black;
+    padding: 6px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+.card-footer button:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+
+@media screen and (min-width: 900px) {
+    .split-screen{
+        flex-direction: row;
+        height: 100vh;
+    }    
+    .left,
+    .right {
+        display: flex;
+        width: 50%;
+        height: auto;
+    }
+}
+

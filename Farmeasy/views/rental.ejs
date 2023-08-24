@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental services</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="../routes/script.js"></script>
+  <style>
+    div.container
+    {
+        font-family: Raleway;
+        margin: 0 auto;
+        padding: 100px 5em 25px;
+        text-align: center;
+    }
+
+    div.container a
+    {
+        color: #FFF;
+        text-decoration: none;
+        font: 20px Raleway;
+        margin: 0px 10px;
+        padding: 10px 10px;
+        position: relative;
+        z-index: 0;
+        cursor: pointer;
+    }
+    .green
+    {
+        background: #4caf50;
+    }
+
+    /* Border X get width  */
+    div.borderXwidth a:before, div.borderXwidth a:after
+    {
+        position: absolute;
+        opacity: 0;
+        width: 0%;
+        height: 2px;
+        content: '';
+        background: #FFF;
+        transition: all 0.3s;
+    }
+
+    div.borderXwidth a:before
+    {
+        left: 0px;
+        top: 0px;
+    }
+
+    div.borderXwidth a:after
+    {
+        right: 0px;
+        bottom: 0px;
+    }
+
+    div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
+    {
+        opacity: 1;
+        width: 100%;
+    }
+    .footer{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+  </style>
+  <!-- <script>
+    // Selecting the iframe element
+    var iframe = document.getElementById("iframe");
+    
+    // Adjusting the iframe height onload event
+    iframe.onload = function(){
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+    </script> -->
+</head>
+
+<body>
+  <!-- header section starts  -->
+
+  <header id="header" >
+	
+    <a href="/profile" class="logo"><span style="color: rgb(164, 235, 118);">farm</span>easy</a>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <a href="/profile#services">Services</a>
+        <a href="/profile#popular">Buy</a>
+        <a href="/rental">Rental Service</a>
+        <a href="/advisor">Advisory</a>
+        <a href="/profile#review">Reviews</a>
+        <a href="/" id="switchLogout">Register</a>
+        <a href="/login" id="switchLogout">Login</a>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+<!-- Inner navbar -->
+<div class="container green borderXwidth">
+    <a href = "/RentalProducts" target="RentaliFrame">Rental Products</a>
+    <a href = "/InvoiceForm" target="RentaliFrame">Apply for Land Rental Service</a>
+</div>
+<iframe id="iframe" src = "/RentalProducts" width="100%" name="RentaliFrame" frameborder="0" scrolling="no" height="1800" ></iframe>
+<!-- footer section  -->
+
+<section class="footer">
+	
+    <div class="share">
+        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjck_vw4pH7AhVDzzgGHYW4DyQQFnoECAsQAQ&url=https%3A%2F%2Fwww.facebook.com%2F&usg=AOvVaw2q27ov2cpCynr72DmuSqEz" class="btn">facebook</a>
+        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiFgbed45H7AhUn8zgGHeJVCMEQFnoECBMQAQ&url=https%3A%2F%2Ftwitter.com%2Flogin&usg=AOvVaw3swNPrVfKaBGiX8TGfSpkN" class="btn">twitter</a>
+        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjamtCR45H7AhWd8DgGHWnTCGwQFnoECA4QAQ&url=https%3A%2F%2Fwww.instagram.com%2F&usg=AOvVaw1cBeRoOpMhZ3-x5M1sA3Fm" class="btn">instagram</a>
+        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiZoP6n45H7AhUX7zgGHSZhA_8QFnoECAYQAQ&url=https%3A%2F%2Fin.pinterest.com%2F&usg=AOvVaw27xxbiSXBci9lSBkMFEcWA" class="btn">pinterest</a>
+        <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjSzOev45H7AhWI8DgGHWhpCpMQFnoECAsQAQ&url=https%3A%2F%2Fwww.linkedin.com%2Flogin&usg=AOvVaw0Nm71ZUGxfI8ojRjO8H1X_" class="btn">linkedin</a>
+    </div>
+    <h1 class="credit"> created by <span> GROUP MAYS </span> | all rights reserved! </h1>  
+</section>
+
+</body>
+</html>

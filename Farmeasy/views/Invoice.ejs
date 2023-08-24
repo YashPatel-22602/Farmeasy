@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>INVOICE</title>
+
+    <style type="text/css">
+        .invoice-box{
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: Arial, sans-serif;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .invoice-box table tr td:nth-child(2)
+        {
+            text-align: right;
+        }
+
+        .invoice-box table tr.top table td
+        {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.information table td
+        {
+           padding-bottom: 40px; 
+        }
+
+        .invoice-box table tr.heading td
+        {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.details td
+        {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td
+        {
+            border-bottom: 1px solid #eee;
+        }
+
+        @media only screen and (max-width: 600px)
+        {
+            .invoice-box table tr.top table td
+            {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td
+            {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+<!-- Starting div -->
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <!-- again create next table -->
+                    <table>
+                        <tr>
+                            <td>
+                                <h4>FarmEasy</h4>
+                            </td>
+                            <td>
+                            Invoice #: <br>
+                            Your Date of Booking:
+                            </td>
+                            <td>
+                                <span id="LON"></span>
+                                <span id="LOS"></span>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- End of Table -->
+                </td>
+            </tr>
+
+            <tr class="informatiion">
+                <td colspan="2">
+                    <!-- inner table start here -->
+                    <table>
+                        <tr>
+                            <td>
+                                jnejcn,inec <br>
+                                Phone: 9494839544 <br>
+                            </td>
+
+                            <td>
+                                scsc <br>
+                                affcea <br>
+                                Email: infeuwbue@gmail.com
+                            </td>
+
+                        </tr>
+                    </table>
+                    <!-- inner table ends -->
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    Payment Method
+                </td>
+                <td>Check #</td>
+
+            </tr>
+
+            <tr class="details">
+                <td>Check</td>
+                <td>1000</td>
+            </tr>
+
+            <tr class="heading">
+                <td>Item</td>
+                <td>Price</td>
+            </tr>
+
+            <tr class="item">
+                <td>Tractor</td>
+                <td>$0000</td>
+            </tr>
+
+            <tr class="item">
+                <td>Harvester</td>
+                <td>$0000</td>
+            </tr>
+
+            <tr class="item">
+                <td>Sprayer</td>
+                <td>$0000</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        const InvoiceID = Math.floor(Math.random() * (999 - 100)) + 100;
+        const landOwnerName = localStorage.getItem("LON");
+        const landOwnerSurname = localStorage.getItem("LOS");
+        const Email = localStorage.getItem("EMAIL");
+        const phoneNumber = localStorage.getItem("PN");
+        const altPhoneNumber = localStorage.getItem("APN");
+        const dateOfBooking = localStorage.getItem("DOB");
+        const Add_flatno = localStorage.getItem("FLTNO");
+        const Add_StreetName = localStorage.getItem("SN");
+        const Add_Landmark = localStorage.getItem("LM");
+        const Add_City= localStorage.getItem("CITY");
+        const Add_State = localStorage.getItem("STATE");
+        const Add_Pincode  = localStorage.getItem("PINCODE");
+        const LandArea = localStorage.getItem("LANDAREA");
+        const CropPref1 = localStorage.getItem("CROPPREF1");
+        const CropPref2 = localStorage.getItem("CROPPREF2");
+
+        
+        window.onload = () => {
+            document.getElementById('InvoiceID').innerHTML = InvoiceID
+            document.getElementById('LON').innerHTML = landOwnerName
+            document.getElementById('LOS').innerHTML = landOwnerSurname
+            document.getElementById('EMAIL').innerHTML = Email
+            document.getElementById('PN').innerHTML = phoneNumber
+            document.getElementById('APN').innerHTML = altPhoneNumber
+            document.getElementById('DOB').innerHTML = dateOfBooking
+            document.getElementById('FLTNO').innerHTML = Add_flatno
+            document.getElementById('SN').innerHTML = Add_StreetName
+            document.getElementById('LM').innerHTML = Add_Landmark
+            document.getElementById('CITY').innerHTML = Add_City
+            document.getElementById('STATE').innerHTML = Add_State
+            document.getElementById('PINCODE').innerHTML = Add_Pincode
+            document.getElementById('LANDAREA').innerHTML = LandArea
+            document.getElementById('CROPPREF1').innerHTML = CropPref1
+            document.getElementById('CROPPREF2').innerHTML = CropPref2
+        
+    }
+    </script>
+    <!-- <script type="text/javascript" src="../routes/GetRentalData.js"></script> -->
+</body>
+</html>
